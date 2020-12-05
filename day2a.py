@@ -1,5 +1,3 @@
-import re
-
 l = []
 with open('data/02.txt') as f:
     for line in f:

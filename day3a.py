@@ -1,12 +1,8 @@
-import numpy as np
-
 l1 = []
 with open('data/03.txt') as f:
     for line in f:
         l1.append(list(line.strip() * 100))
 
-
-# need to go down 323 steps
 
 def tree_counting(right, down):
     row = 0
