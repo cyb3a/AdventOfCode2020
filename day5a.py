@@ -5,7 +5,5 @@ with open('data/05.txt') as f:
         a, b = tmp[:7], tmp[7:]
         l.append([a, b])
 
-print(l)
 ids = [int(x[0], 2) * 8 + int(x[1], 2) for x in l]
-print(ids)
 print(max(ids))
