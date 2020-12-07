@@ -6,11 +6,9 @@ with open('data/07.txt') as f:
         t = line.strip().replace('.', '').replace(' contain ', ',').replace('bags', '').replace(' bags', '').replace(
             'bag', '').replace(', ', ',').replace(' ', '').split(',')
         bag_contains[t[0]] = t[1:]
-print(bag_contains)
 
 
 def count_contents(bag):
-    print('contens of {}: {}'.format(bag[1:], bag_contains[bag[1:]]))
     if bag_contains[bag[1:]][0] == 'noother':
         return 0
     else:
