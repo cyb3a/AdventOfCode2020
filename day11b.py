@@ -1,6 +1,5 @@
 input = [['X'] + list(x) + ['X'] for x in open('data/11.txt').read().split('\n')]
 input = [['X'] * len(input[0])] + input + [['X'] * len(input[0])]
-to_change = [[False for j in range(len(input[0]))] for i in range(len(input))]
 
 
 def check_above_left(i, j):
@@ -69,21 +68,17 @@ def reset_to_change():
 
 
 def count_occupied():
-    cnt = 0
-    for row in input:
-        for seat in row:
-            if seat == '#':
-                cnt += 1
-    return cnt
+    return ''.join([''.join(x) for x in input]).count('#')
 
 
 old_cnt = count_occupied()
+to_change = reset_to_change()
 new_cnt = 1
 
 while old_cnt != new_cnt:
     for i in range(len(input) - 1):
         for j in range(len(input[0]) - 1):
-            if input != 'X' and input != '.':
+            if input[i][j] != 'X' and input != '.':
                 check_adjacent(i, j)
     for i in range(len(input)):
         for j in range(len(input[0])):

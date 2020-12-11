@@ -1,6 +1,4 @@
-with open('data/10.txt') as f:
-    input = sorted(list(map(int, f.read().split('\n'))))
-
+input = sorted(list(map(int, open('data/10.txt').read().split('\n'))))
 input.append(max(input) + 3)
 last_num = 0
 tmp = 0

@@ -2,12 +2,8 @@ import re
 hcl_pattern = '^#[a-f0-9]{6}$'
 pid_pattern = '^[0-9]{9}$'
 
-l = list()
-with open('data/04.txt') as f:
-    l = f.read().split('\n\n')
-
 passports_count = 0
-for p in l:
+for p in open('data/04.txt').read().split('\n\n'):
     pp = p.replace('\n', ' ').split(' ')
     if len(pp) == 8 or (len(pp) == 7 and 'cid' not in ''.join(pp)):
         is_valid = True

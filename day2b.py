@@ -1,18 +1,14 @@
 import re
 
-l = []
+input = []
 with open('data/02.txt') as f:
     for line in f:
         line = line.replace(':', '').strip().split(' ')
         line[0] = line[0].split('-')
         line[0] = [int(x) for x in line[0]]
-        l.append(line)
-
-print(l)
-
+        input.append(line)
 valid = 0
-
-for p in l:
+for p in input:
     abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
            'w', 'x', 'y', 'z']
     abc.remove(p[1])

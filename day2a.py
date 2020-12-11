@@ -1,16 +1,13 @@
-l = []
+input = []
 with open('data/02.txt') as f:
     for line in f:
         line = line.replace(':', '').strip().split(' ')
         line[0] = line[0].split('-')
         line[0] = [int(x) for x in line[0]]
-        l.append(line)
-
-print(l)
+        input.append(line)
 
 valid = 0
-
-for p in l:
+for p in input:
     a = p[0][0]-1
     b = p[0][1]-1
     x = p[2][a]

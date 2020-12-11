@@ -1,6 +1,4 @@
-with open('data/10.txt') as f:
-    input = sorted(list(map(int, f.read().split('\n'))))
-
+input = sorted(list(map(int, open('data/10.txt').read().split('\n'))))
 input.append(0)
 input.append(max(input)+3)
 threes = 1

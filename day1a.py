@@ -1,13 +1,5 @@
-l1 = []
-l2 = []
-with open('data/01.txt') as f:
-    for line in f:
-        line.strip()
-        l1.append(int(line))
-        l2.append(int(line))
-
-for x in l1:
-    for y in l2:
+input = [int(line.strip()) for line in open('data/01.txt')]
+for x in input:
+    for y in input:
         if x + y == 2020:
-            print(x, y, x * y)
-            break
+            print(x * y)

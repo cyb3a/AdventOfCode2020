@@ -1,12 +1,8 @@
 from collections import Counter
-l = []
-with open('data/06.txt') as f:
-    l = f.read().split('\n\n')
 
-l = [x.split('\n') for x in l]
+input = [x.split('\n') for x in open('data/06.txt').read().split('\n\n')]
 summed = 0
-
-for group in l:
+for group in input:
     group_size = len(group)
     group_choices = []
     for choice in group:
